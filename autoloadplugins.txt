@@ -11,6 +11,7 @@ defaultmodalmodel.so
 decide.so
 delay.so
 diffequations.so
+finitemethods.so
 dispose.so
 dropoff.so
 dummy.so

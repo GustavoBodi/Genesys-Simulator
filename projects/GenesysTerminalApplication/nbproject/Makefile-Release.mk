@@ -92,6 +92,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/296208d5/Smart_Delay.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_Dummy.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_Failures.o \
+	${OBJECTDIR}/_ext/296208d5/Smart_FiniteMethods.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_HoldSearchRemove.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_ModelInfoModelSimulation.o \
 	${OBJECTDIR}/_ext/296208d5/Smart_ODE.o \
@@ -184,6 +185,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/f13e5db9/Enter.o \
 	${OBJECTDIR}/_ext/f13e5db9/Exit.o \
 	${OBJECTDIR}/_ext/f13e5db9/LSODE.o \
+	${OBJECTDIR}/_ext/f13e5db9/FiniteMethods.o \
 	${OBJECTDIR}/_ext/f13e5db9/Leave.o \
 	${OBJECTDIR}/_ext/f13e5db9/MarkovChain.o \
 	${OBJECTDIR}/_ext/f13e5db9/Match.o \
@@ -243,7 +245,8 @@ TESTFILES= \
 # Test Object Files
 TESTOBJECTFILES= \
 	${TESTDIR}/_ext/bc246cfa/gtest-all.o \
-	${TESTDIR}/_ext/d18a80cd/testTerminalApps.o
+	${TESTDIR}/_ext/d18a80cd/testTerminalApps.o \
+	${TESTDIR}/_ext/f18b6b2d/testFiniteMethods.o
 
 # C Compiler Flags
 CFLAGS=
@@ -553,6 +556,11 @@ ${OBJECTDIR}/_ext/296208d5/Smart_Failures.o: ../../source/applications/terminal/
 	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/296208d5/Smart_Failures.o ../../source/applications/terminal/examples/smarts/Smart_Failures.cpp
+
+${OBJECTDIR}/_ext/296208d5/Smart_FiniteMethods.o: ../../source/applications/terminal/examples/smarts/Smart_FiniteMethods.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/296208d5/Smart_FiniteMethods.o ../../source/applications/terminal/examples/smarts/Smart_FiniteMethods.cpp
 
 ${OBJECTDIR}/_ext/296208d5/Smart_HoldSearchRemove.o: ../../source/applications/terminal/examples/smarts/Smart_HoldSearchRemove.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
@@ -1014,6 +1022,11 @@ ${OBJECTDIR}/_ext/f13e5db9/LSODE.o: ../../source/plugins/components/LSODE.cpp nb
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/f13e5db9/LSODE.o ../../source/plugins/components/LSODE.cpp
 
+${OBJECTDIR}/_ext/f13e5db9/FiniteMethods.o: ../../source/plugins/components/FiniteMethods.cpp nbproject/Makefile-${CND_CONF}.mk
+	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/f13e5db9/FiniteMethods.o ../../source/plugins/components/FiniteMethods.cpp
+
 ${OBJECTDIR}/_ext/f13e5db9/Leave.o: ../../source/plugins/components/Leave.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
 	${RM} "$@.d"
@@ -1261,7 +1274,7 @@ ${OBJECTDIR}/main.o: main.cpp nbproject/Makefile-${CND_CONF}.mk
 .build-tests-conf: .build-tests-subprojects .build-conf ${TESTFILES}
 .build-tests-subprojects:
 
-${TESTDIR}/TestFiles/f1: ${TESTDIR}/_ext/bc246cfa/gtest-all.o ${TESTDIR}/_ext/d18a80cd/testTerminalApps.o ${OBJECTFILES:%.o=%_nomain.o}
+${TESTDIR}/TestFiles/f1: ${TESTDIR}/_ext/bc246cfa/gtest-all.o ${TESTDIR}/_ext/d18a80cd/testTerminalApps.o ${TESTDIR}/_ext/f18b6b2d/testFiniteMethods.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc} -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS}   
 
@@ -1276,6 +1289,11 @@ ${TESTDIR}/_ext/d18a80cd/testTerminalApps.o: ../../source/tests/testTerminalApps
 	${MKDIR} -p ${TESTDIR}/_ext/d18a80cd
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${TESTDIR}/_ext/d18a80cd/testTerminalApps.o ../../source/tests/testTerminalApps.cpp
+
+${TESTDIR}/_ext/f18b6b2d/testFiniteMethods.o: ../../source/tests/testFiniteMethods.cpp 
+	${MKDIR} -p ${TESTDIR}/_ext/f18b6b2d
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I. -MMD -MP -MF "$@.d" -o ${TESTDIR}/_ext/f18b6b2d/testFiniteMethods.o ../../source/tests/testFiniteMethods.cpp
 
 
 ${OBJECTDIR}/_ext/6bf258f7/BaseGenesysTerminalApplication_nomain.o: ${OBJECTDIR}/_ext/6bf258f7/BaseGenesysTerminalApplication.o ../../source/applications/BaseGenesysTerminalApplication.cpp 
@@ -2017,6 +2035,19 @@ ${OBJECTDIR}/_ext/296208d5/Smart_Failures_nomain.o: ${OBJECTDIR}/_ext/296208d5/S
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/296208d5/Smart_Failures_nomain.o ../../source/applications/terminal/examples/smarts/Smart_Failures.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/_ext/296208d5/Smart_Failures.o ${OBJECTDIR}/_ext/296208d5/Smart_Failures_nomain.o;\
+	fi
+
+${OBJECTDIR}/_ext/296208d5/Smart_FiniteMethods_nomain.o: ${OBJECTDIR}/_ext/296208d5/Smart_FiniteMethods.o ../../source/applications/terminal/examples/smarts/Smart_FiniteMethods.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/296208d5
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/296208d5/Smart_FiniteMethods.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/296208d5/Smart_FiniteMethods_nomain.o ../../source/applications/terminal/examples/smarts/Smart_FiniteMethods.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/_ext/296208d5/Smart_FiniteMethods.o ${OBJECTDIR}/_ext/296208d5/Smart_FiniteMethods_nomain.o;\
 	fi
 
 ${OBJECTDIR}/_ext/296208d5/Smart_HoldSearchRemove_nomain.o: ${OBJECTDIR}/_ext/296208d5/Smart_HoldSearchRemove.o ../../source/applications/terminal/examples/smarts/Smart_HoldSearchRemove.cpp 
@@ -3213,6 +3244,19 @@ ${OBJECTDIR}/_ext/f13e5db9/LSODE_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/LSODE.o ..
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/f13e5db9/LSODE_nomain.o ../../source/plugins/components/LSODE.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/_ext/f13e5db9/LSODE.o ${OBJECTDIR}/_ext/f13e5db9/LSODE_nomain.o;\
+	fi
+
+${OBJECTDIR}/_ext/f13e5db9/FiniteMethods_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/FiniteMethods.o ../../source/plugins/components/FiniteMethods.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/f13e5db9
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/_ext/f13e5db9/FiniteMethods.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/f13e5db9/FiniteMethods_nomain.o ../../source/plugins/components/FiniteMethods.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/_ext/f13e5db9/FiniteMethods.o ${OBJECTDIR}/_ext/f13e5db9/FiniteMethods_nomain.o;\
 	fi
 
 ${OBJECTDIR}/_ext/f13e5db9/Leave_nomain.o: ${OBJECTDIR}/_ext/f13e5db9/Leave.o ../../source/plugins/components/Leave.cpp 

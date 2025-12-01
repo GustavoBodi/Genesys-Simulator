@@ -88,6 +88,7 @@ SOURCES += \
     ../../../../plugins/components/DefaultModalModel.cpp \
     ../../../../plugins/components/Delay.cpp \
     ../../../../plugins/components/DiffEquations.cpp \
+    ../../../../plugins/components/FiniteMethods.cpp \
     ../../../../plugins/components/Dispose.cpp \
     ../../../../plugins/components/DropOff.cpp \
     ../../../../plugins/components/DummyComponent.cpp \
@@ -202,6 +203,7 @@ SOURCES += \
     ../../../terminal/examples/smarts/Smart_Delay.cpp \
     ../../../terminal/examples/smarts/Smart_Dummy.cpp \
     ../../../terminal/examples/smarts/Smart_Failures.cpp \
+    ../../../terminal/examples/smarts/Smart_FiniteMethods.cpp \
     ../../../terminal/examples/smarts/Smart_HoldSearchRemove.cpp \
     ../../../terminal/examples/smarts/Smart_LSODE.cpp \
     ../../../terminal/examples/smarts/Smart_MarkovChain.cpp \
@@ -372,6 +374,7 @@ HEADERS += \
     ../../../../plugins/components/DefaultModalModel.h \
     ../../../../plugins/components/Delay.h \
     ../../../../plugins/components/DiffEquations.h \
+    ../../../../plugins/components/FiniteMethods.h \
     ../../../../plugins/components/Dispose.h \
     ../../../../plugins/components/DropOff.h \
     ../../../../plugins/components/DummyComponent.h \
@@ -496,6 +499,7 @@ HEADERS += \
     ../../../terminal/examples/smarts/Smart_Delay.h \
     ../../../terminal/examples/smarts/Smart_Dummy.h \
     ../../../terminal/examples/smarts/Smart_Failures.h \
+    ../../../terminal/examples/smarts/Smart_FiniteMethods.h \
     ../../../terminal/examples/smarts/Smart_HoldSearchRemove.h \
     ../../../terminal/examples/smarts/Smart_LSODE.h \
     ../../../terminal/examples/smarts/Smart_MarkovChain.h \

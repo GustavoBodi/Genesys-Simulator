@@ -57,6 +57,7 @@
 #include "../../plugins/components/Wait.h"
 #include "../../plugins/components/Write.h"
 #include "../../plugins/components/LSODE.h"
+#include "../../plugins/components/FiniteMethods.h"
 
 
 // Model data definitions
@@ -193,6 +194,8 @@ StaticGetPluginInformation PluginConnectorDummyImpl1::_connectContinuos(const st
     StaticGetPluginInformation GetInfo = nullptr;
     if (fn == "diffequations.so")
         GetInfo = &DiffEquations::GetPluginInformation;
+    else if (fn == "finitemethods.so")
+        GetInfo = &FiniteMethods::GetPluginInformation;
     else if (fn == "lsode.so")
         GetInfo = &LSODE::GetPluginInformation;
     //else if (fn == "finiteelement.so")
